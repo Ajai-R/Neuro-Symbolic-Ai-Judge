@@ -83,16 +83,11 @@ inspect_step.py
 image1.jpeg
 image2.jpeg
 
-# 8. Research Paper Debug Screenshots & Scratch Compilers
-research_paper/figures/test_*.png
-research_paper/page_*.png
-research_paper/test_compile.py
-research_paper/test_texlive.py
-research_paper/update_and_compile.py
-research_paper/apply_user_updates.py
-research_paper/compile_latex.py
-research_paper/render_s2_mermaid.py
-research_paper/__pycache__/
+# 8. Research Paper, LaTeX Sources & PDFs (Excluded from GitHub)
+research_paper/
+*.tex
+*.pdf
+IEEE_Research_Paper_RTI_NeuroSymbolic.*
 
 # 9. IDE & Operating System Artifacts
 .DS_Store

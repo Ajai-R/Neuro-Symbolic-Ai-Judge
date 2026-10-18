@@ -280,20 +280,16 @@ Neuro-Symbolic-Ai-Judge/
 │       ├── components/                # Glassmorphic UI cards & visualizers
 │       ├── data/                      # Preset benchmark demonstration cases
 │       └── services/                  # Live API service & offline pipeline engine
-├── figures/                           # Visual architecture & evaluation diagrams
-│   ├── fig31_pipeline_overview.png
-│   ├── fig32_signal1_architecture.png
-│   ├── fig33_signal1_learning_curve.png
-│   ├── fig34_signal1_confusion_matrix.png
-│   ├── fig35_signal2_architecture.png
-│   ├── fig36_signal3_architecture.png
-│   ├── fig37_decision_engine_guardrails.png
-│   ├── fig38_ablation_comparison.png
-│   └── fig39_master_confusion_matrix.png
-└── research_paper/                    # Academic publication & LaTeX source
-    ├── IEEE_Research_Paper_RTI_NeuroSymbolic.tex
-    ├── IEEE_Research_Paper_RTI_NeuroSymbolic.pdf
-    └── generate_paper_figures.py
+└── figures/                           # Visual architecture & evaluation diagrams
+    ├── fig31_pipeline_overview.png
+    ├── fig32_signal1_architecture.png
+    ├── fig33_signal1_learning_curve.png
+    ├── fig34_signal1_confusion_matrix.png
+    ├── fig35_signal2_architecture.png
+    ├── fig36_signal3_architecture.png
+    ├── fig37_decision_engine_guardrails.png
+    ├── fig38_ablation_comparison.png
+    └── fig39_master_confusion_matrix.png
 ```
 
 ---
@@ -427,24 +423,8 @@ Open your browser at `http://localhost:5173/` to interact with the Explainable A
 }
 ```
 
----
 
-## 9. Academic Publication & Citation
-
-If you use this codebase, methodology, or benchmark in your academic research, please cite our IEEE research paper:
-
-```bibtex
-@article{ajai2026neurosymbolicrti,
-  title={An Explainable Neuro-Symbolic AI Advisory System for RTI Decision Outcome Prediction},
-  author={Ajai, R. and Gowtham Hari, S. and Nivethitha, V.},
-  journal={Department of Computer Science and Engineering, Amrita School of Computing, Amrita Vishwa Vidyapeetham, Chennai},
-  year={2026}
-}
-```
-
----
-
-## 10. License & Ethical Disclaimer
+## 9. License & Ethical Disclaimer
 
 * **License**: MIT License. See [LICENSE](LICENSE) for details.
 * **Judicial Disclaimer**: This software is designed strictly as an **Explainable First-Pass Advisory Decision Support System** to assist First Appellate Authorities and Information Commissioners in triaging backlogs. It does not replace human judicial discretion or statutory authority. All recommendations are auditable and subject to human oversight.
