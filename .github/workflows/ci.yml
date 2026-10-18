@@ -31,6 +31,8 @@ jobs:
           python -m compileall decision_engine signal_2_coverage signal_3 src tests backend_server.py
 
       - name: Execute Automated Unit Test Suite
+        env:
+          PYTHONPATH: .
         run: |
           python -m unittest discover tests -v
 

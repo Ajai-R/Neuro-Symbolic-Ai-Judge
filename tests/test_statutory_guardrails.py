@@ -1,8 +1,12 @@
-"""
-Unit tests for Statutory Fact Scanner and 5-Tier Legal Guardrails Hierarchy.
-"""
-
+import os
+import sys
 import unittest
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 from signal_3.scanner import StatutoryScanner, StatutoryFacts
 from decision_engine.symbolic_guardrails import StatutoryGuardrails
 
