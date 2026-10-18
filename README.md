@@ -6,11 +6,6 @@
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF.svg)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Academic Project | Department of Computer Science & Engineering**  
-**Amrita School of Computing, Amrita Vishwa Vidyapeetham, Chennai Campus**  
-* **Batch ID**: BATCH ID-30  
-* **Student Members**: Ajai R, Gowtham Hari S  
-* **Faculty Guide**: Mrs. Nivethitha V (Assistant Professor - CSE)
 
 ---
 
