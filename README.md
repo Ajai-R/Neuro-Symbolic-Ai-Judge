@@ -38,45 +38,14 @@ Standard Large Language Models (LLMs) operate probabilistically:
 
 ## 2. Complete System Architecture
 
-The pipeline processes unseen RTI disputes through a **4-stage tri-signal neuro-symbolic framework**:
+The pipeline processes unseen RTI disputes through an end-to-end **4-stage tri-signal neuro-symbolic architecture**, reconciling neural perception with a deterministic statutory logic matrix:
 
-```mermaid
-flowchart TD
-    subgraph Input ["Dispute Input Record"]
-        A["Citizen RTI Query (Information Sought)"]
-        B["Public Authority Response (PIO Narrative)"]
-        C["Statutory Metadata (Authority, Cited Exemptions, Delay Days)"]
-    end
-
-    subgraph Signals ["Tri-Signal Parallel Inference Layer"]
-        subgraph S1 ["Signal 1: Domain Neural Classifier"]
-            D["Multi-Field Legal Prompt\nHead (160) + Tail (350) Tokens"] --> E["InLegalBERT Transformer Backbone\n(law-ai/InLegalBERT)"]
-            E --> F["4-Class Neural Prior Distribution P_S1(y|X)"]
-        end
-
-        subgraph S2 ["Signal 2: Substantive Coverage Auditor"]
-            G["Query Decomposer (Q_1 ... Q_N)\nImportance Weighting (0.65 Core vs 0.35 Aux)"] --> H["LLM Judicial Auditor (Nemotron 3 / Gemini)\nDense Embeddings (BGE-M3 / MiniLM)"]
-            H --> I["Factual Compliance Ledger & Coverage Ratio P_S2(y)"]
-        end
-
-        subgraph S3 ["Signal 3: Statutory Fact Scanner"]
-            J["RTI Act 2005 Statutory Ontology\n(Sec 8, Sec 10, Sec 20, Sec 24)"] --> K["Pattern & Boundary Regex Scanner"]
-            K --> L["Statutory Facts & Legal Prior Distribution P_S3(y)"]
-        end
-    end
-
-    subgraph Synthesis ["Stage 4: Neuro-Symbolic Decision Engine"]
-        M["Continuous Multi-Signal Weighted Fusion\nP_fused = 0.50 P_S1 + 0.30 P_S2 + 0.20 P_S3"]
-        N["5-Tier Hierarchy of Legal Precedence Guardrails\n(Sec 24 Veto -> Sec 20 Penalty -> Sec 10 Severability -> Sec 7 Evasion -> Sec 8 Shield)"]
-        O["Final Predicted Advisory Outcome"]
-        P["Human-Auditable Judicial Reasoning Trace & Direction"]
-    end
-
-    A & B & C --> S1 & S2 & S3
-    F & I & L --> M
-    M --> N
-    N --> O & P
-```
+<p align="center">
+  <img src="figures/fig_architecture.png" alt="Neuro-Symbolic AI Advisory System Architecture" width="100%" />
+</p>
+<p align="center">
+  <em>Figure 1: Complete 4-Stage Tri-Signal Neuro-Symbolic System Architecture for RTI Decision Outcome Prediction.</em>
+</p>
 
 ---
 
