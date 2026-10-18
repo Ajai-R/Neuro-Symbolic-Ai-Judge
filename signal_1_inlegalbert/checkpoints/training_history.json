@@ -1,0 +1,110 @@
+{
+  "model_name": "law-ai/InLegalBERT",
+  "stage1_epochs": 2,
+  "stage2_epochs": 8,
+  "batch_size": 8,
+  "best_val_macro_f1": 0.6887076654041877,
+  "total_time_sec": 322.12501764297485,
+  "history": [
+    {
+      "epoch": 1,
+      "stage": "Stage 1 (Head Warmup)",
+      "train_loss": 1.0586,
+      "val_loss": 0.9751,
+      "val_accuracy": 0.5686,
+      "val_macro_f1": 0.5388,
+      "val_weighted_f1": 0.5406,
+      "epoch_time_sec": 20.38
+    },
+    {
+      "epoch": 2,
+      "stage": "Stage 1 (Head Warmup)",
+      "train_loss": 0.8186,
+      "val_loss": 0.7964,
+      "val_accuracy": 0.651,
+      "val_macro_f1": 0.6457,
+      "val_weighted_f1": 0.6459,
+      "epoch_time_sec": 19.47
+    },
+    {
+      "epoch": 3,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.7474,
+      "val_loss": 0.9054,
+      "val_accuracy": 0.6078,
+      "val_macro_f1": 0.5735,
+      "val_weighted_f1": 0.5735,
+      "epoch_time_sec": 34.07
+    },
+    {
+      "epoch": 4,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.6695,
+      "val_loss": 0.8216,
+      "val_accuracy": 0.6588,
+      "val_macro_f1": 0.6563,
+      "val_weighted_f1": 0.6567,
+      "epoch_time_sec": 34.07
+    },
+    {
+      "epoch": 5,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.5764,
+      "val_loss": 0.8133,
+      "val_accuracy": 0.6667,
+      "val_macro_f1": 0.6698,
+      "val_weighted_f1": 0.6702,
+      "epoch_time_sec": 34.33
+    },
+    {
+      "epoch": 6,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.4753,
+      "val_loss": 0.9869,
+      "val_accuracy": 0.651,
+      "val_macro_f1": 0.6623,
+      "val_weighted_f1": 0.663,
+      "epoch_time_sec": 34.01
+    },
+    {
+      "epoch": 7,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.4172,
+      "val_loss": 1.0034,
+      "val_accuracy": 0.6824,
+      "val_macro_f1": 0.6823,
+      "val_weighted_f1": 0.6827,
+      "epoch_time_sec": 34.07
+    },
+    {
+      "epoch": 8,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.3384,
+      "val_loss": 1.0311,
+      "val_accuracy": 0.6863,
+      "val_macro_f1": 0.6887,
+      "val_weighted_f1": 0.6891,
+      "epoch_time_sec": 34.16
+    },
+    {
+      "epoch": 9,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.2932,
+      "val_loss": 1.0588,
+      "val_accuracy": 0.6824,
+      "val_macro_f1": 0.687,
+      "val_weighted_f1": 0.6874,
+      "epoch_time_sec": 34.24
+    },
+    {
+      "epoch": 10,
+      "stage": "Stage 2 (Top-4 Layers)",
+      "train_loss": 0.2553,
+      "val_loss": 1.0961,
+      "val_accuracy": 0.6824,
+      "val_macro_f1": 0.687,
+      "val_weighted_f1": 0.6874,
+      "epoch_time_sec": 34.35
+    }
+  ]
+}

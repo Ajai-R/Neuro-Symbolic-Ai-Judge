@@ -1,0 +1,103 @@
+# ==============================================================================
+# Git Ignore Rules for Neuro-Symbolic RTI Judicial Advisory System
+# ==============================================================================
+
+# 1. Environment Secrets & API Keys
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# 2. Datasets (Excluded per instructions; described in detail in README.md)
+Dataset/
+Final_dataset.csv
+*.csv
+*.jsonl
+*.tsv
+# Preserve training history and metric reports
+!signal_1_inlegalbert/checkpoints/*.json
+!decision_engine/*.json
+
+# 3. Model Weights & Large Binary Checkpoints (> 100 MB)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+signal_1_inlegalbert/checkpoints_8epoch_backup/
+# Ensure tokenizer configs and architecture definitions are preserved
+!signal_1_inlegalbert/checkpoints/best_model/config.json
+!signal_1_inlegalbert/checkpoints/best_model/label_mapping.json
+!signal_1_inlegalbert/checkpoints/best_model/tokenizer.json
+!signal_1_inlegalbert/checkpoints/best_model/tokenizer_config.json
+
+# 4. Frontend Dependencies & Build Output
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+node_modules/
+dist/
+
+# 5. Python Bytecode, Caches & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+Fast_gpu/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+
+# 6. Word, Presentation & Temporary Lock Files
+~$*
+*.docx
+*.pptx
+*.zip
+extracted_template_media/
+latex_figures_to_upload/
+
+# 7. One-off Scratch & Formatting Scripts
+apply_methodology_rewrite.py
+apply_user_requested_updates.py
+build_comprehensive_50page_report.py
+build_final_report_new_template.py
+build_full_report.py
+c2_paragraphs.txt
+check_deprecated.py
+check_images.py
+check_rem_omath.py
+check_sections.py
+check_sections2.py
+check_tables.py
+clean_last_omath.py
+dump_c2.py
+dump_refs.py
+final_sync_toc.py
+inspect_eq_paras.py
+inspect_step.py
+image1.jpeg
+image2.jpeg
+
+# 8. Research Paper Debug Screenshots & Scratch Compilers
+research_paper/figures/test_*.png
+research_paper/page_*.png
+research_paper/test_compile.py
+research_paper/test_texlive.py
+research_paper/update_and_compile.py
+research_paper/apply_user_updates.py
+research_paper/compile_latex.py
+research_paper/render_s2_mermaid.py
+research_paper/__pycache__/
+
+# 9. IDE & Operating System Artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/

@@ -1,0 +1,98 @@
+================================================================================
+ SIGNAL 1: InLegalBERT NEURAL OUTCOME CLASSIFIER (TWO-STAGE LAYER FREEZING)
+================================================================================
+Device: cuda
+GPU Name: NVIDIA GeForce RTX 3050 Laptop GPU
+VRAM Allocated: 0.0 MB
+
+Loading training data from: D:\Final Year Project\Dataset\train.csv
+Total training cases available: 1696
+Training split:   1441 cases
+Validation split: 255 cases
+
+Initializing Tokenizer (law-ai/InLegalBERT)...
+Building multi-field prompts (Query + Exemptions + Authority + Narrative)...
+Computed Class Weights: [0.9980000257492065, 1.0010000467300415, 1.0010000467300415, 1.0010000467300415]
+Loading Pretrained Model (law-ai/InLegalBERT)...
+
+================================================================================
+ >>> STAGE 1: WARMUP CLASSIFIER HEAD (InLegalBERT Encoder 100% Frozen)
+     Goal: Align classifier head with legal embeddings without scrambling BERT
+================================================================================
+Epoch  | Stage    | Train Loss  | Val Loss   | Val Acc   | Val Macro F1  | Val W-F1  | Time
+--------------------------------------------------------------------------------
+1      | Stage 1  | 1.0586      | 0.9751     |   56.86% |       53.88% |   54.06% | 20.4s
+  --> [*] New Best Model (Acc: 56.86%, Macro F1: 53.88%)! Saving checkpoint...
+2      | Stage 1  | 0.8186      | 0.7964     |   65.10% |       64.57% |   64.59% | 19.5s
+  --> [*] New Best Model (Acc: 65.10%, Macro F1: 64.57%)! Saving checkpoint...
+
+================================================================================
+ >>> STAGE 2: FINE-TUNE TOP 4 LAYERS (Layers 0-7 Frozen, Layers 8-11 Unfrozen)
+     Goal: Adapt high-level semantic reasoning to Indian RTI law
+================================================================================
+Epoch  | Stage    | Train Loss  | Val Loss   | Val Acc   | Val Macro F1  | Val W-F1  | Time
+--------------------------------------------------------------------------------
+3      | Stage 2  | 0.7474      | 0.9054     |   60.78% |       57.35% |   57.35% | 34.1s
+4      | Stage 2  | 0.6695      | 0.8216     |   65.88% |       65.63% |   65.67% | 34.1s
+  --> [*] New Best Model (Acc: 65.88%, Macro F1: 65.63%)! Saving checkpoint...
+5      | Stage 2  | 0.5764      | 0.8133     |   66.67% |       66.98% |   67.02% | 34.3s
+  --> [*] New Best Model (Acc: 66.67%, Macro F1: 66.98%)! Saving checkpoint...
+6      | Stage 2  | 0.4753      | 0.9869     |   65.10% |       66.23% |   66.30% | 34.0s
+7      | Stage 2  | 0.4172      | 1.0034     |   68.24% |       68.23% |   68.27% | 34.1s
+  --> [*] New Best Model (Acc: 68.24%, Macro F1: 68.23%)! Saving checkpoint...
+8      | Stage 2  | 0.3384      | 1.0311     |   68.63% |       68.87% |   68.91% | 34.2s
+  --> [*] New Best Model (Acc: 68.63%, Macro F1: 68.87%)! Saving checkpoint...
+9      | Stage 2  | 0.2932      | 1.0588     |   68.24% |       68.70% |   68.74% | 34.2s
+10     | Stage 2  | 0.2553      | 1.0961     |   68.24% |       68.70% |   68.74% | 34.4s
+================================================================================
+
+[DONE] Two-Stage Training Completed in 322.1 seconds (5.4 mins).
+Peak Validation Macro F1: 68.87%
+Training history saved to: D:\Final Year Project\signal_1_inlegalbert\checkpoints\training_history.json
+Epoch-by-epoch CSV log saved to: D:\Final Year Project\signal_1_inlegalbert\checkpoints\training_log.csv
+Best model checkpoint saved to: D:\Final Year Project\signal_1_inlegalbert\checkpoints\best_model
+
+================================================================================
+ RUNNING AUTOMATIC TEST BENCHMARK EVALUATION (UNSEEN BLIND TEST SET)
+================================================================================
+Loading Unseen Blind Test Set from: D:\Final Year Project\Dataset\test.csv
+Total Test Cases: 424
+Model loaded successfully. Running inference on test set...
+  Processed 50/424 cases...
+  Processed 100/424 cases...
+  Processed 150/424 cases...
+  Processed 200/424 cases...
+  Processed 250/424 cases...
+  Processed 300/424 cases...
+  Processed 350/424 cases...
+  Processed 400/424 cases...
+  Processed 424/424 cases...
+
+======================================================================
+ SIGNAL 1: TEST BENCHMARK EVALUATION RESULTS (20% BLIND TEST SET)
+======================================================================
+Overall Accuracy:  73.11%
+Macro F1-Score:    73.35%
+Weighted F1-Score: 73.35%
+
+                      precision    recall  f1-score   support
+
+INFORMATION_DIRECTED       0.56      0.83      0.67       106
+    APPEAL_DISMISSED       0.65      0.50      0.57       106
+     PENALTY_IMPOSED       0.91      0.82      0.86       106
+      PARTIAL_RELIEF       0.91      0.77      0.84       106
+
+            accuracy                           0.73       424
+           macro avg       0.76      0.73      0.73       424
+        weighted avg       0.76      0.73      0.73       424
+
+
+Confusion Matrix (Rows: Actual, Columns: Predicted):
+                         INFORMAT APPEAL_D PENALTY_ PARTIAL_
+INFORMATION_DIRECTED           88       14        3        1
+APPEAL_DISMISSED               46       53        2        5
+PENALTY_IMPOSED                12        5       87        2
+PARTIAL_RELIEF                 11        9        4       82
+
+Saved test predictions to: D:\Final Year Project\signal_1_inlegalbert\checkpoints\test_predictions.csv
+Saved evaluation metrics to: D:\Final Year Project\signal_1_inlegalbert\checkpoints\test_evaluation_report.json
